@@ -1,0 +1,10 @@
+@import "../../../styles/mixins/mixins.scss";
+.course {
+	align-items: center;
+	display: flex;
+	justify-content: space-around;
+	height: 300px;
+	padding: 15px;
+	width: 100%;
+	@extend .border;
+}
