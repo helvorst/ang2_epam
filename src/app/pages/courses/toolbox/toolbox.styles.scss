@@ -1,0 +1,15 @@
+@import "../../../styles/mixins/mixins.scss";
+@import "../../../styles/variables/basic.scss";
+
+.toolbox {
+	display: flex;
+	padding: $padding;
+	@extend .box;
+
+	.find {
+		flex-basis: 80%;
+	}
+	.add {
+
+	}
+}

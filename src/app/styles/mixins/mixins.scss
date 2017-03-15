@@ -1,3 +1,17 @@
+@import '../variables/basic.scss';
+
 .border {
 	border: 1px solid lightgray;
+}
+.box {
+	margin-top: 15px;
+	@extend  .border;
+}
+
+.btn {
+	background-color: white;
+	border: 1px solid lightgray;
+	height: $elm-height;
+	text-transform: lowercase;
+	width: 90px;
 }

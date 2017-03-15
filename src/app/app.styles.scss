@@ -1,8 +1,22 @@
+@import "./styles/mixins/mixins.scss";
+@import './styles/variables/basic';
+
 html, body{
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: "Courier New" , Helvetica, sans-serif;
+    font-size: 12px;
+	height: 100%;
+	text-transform: lowercase;
 }
 
 a.active {
   background-color: gray;
+}
+
+button {
+	@extend .btn;
+	font-family: Courier;
+}
+input {
+	height: $elm-height;
+	@extend .border;
 }

@@ -1,11 +1,12 @@
 @import "../../../styles/variables/colors.scss";
+@import "../../../styles/mixins/mixins.scss";
 
 .main-footer {
-	background-color: $c-primary;
-	color: $white;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	height: 50px;
+	@extend .box;
+	//background-color: lightgrey;
 }

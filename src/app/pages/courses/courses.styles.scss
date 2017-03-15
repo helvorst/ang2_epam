@@ -1,5 +1,5 @@
 @import "../../styles/mixins/mixins.scss";
 .courses {
 	padding: 15px;
-	@extend .border;
+	@extend .box;
 }
