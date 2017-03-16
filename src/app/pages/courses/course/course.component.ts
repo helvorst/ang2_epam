@@ -1,7 +1,9 @@
 /**
  * Created by hel on 13.03.2017.
  */
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
+
+import { Course } from '../../../core/class/course.class';
 
 @Component({
 	selector: 'course',
@@ -10,7 +12,15 @@ import { Component } from '@angular/core';
 })
 
 export class CourseComponent {
-	course:{
+	@Input() course: Course;
 
-	}
+	@Output() onDeleteCourse = new EventEmitter<Course>();
+
+	deleteCourse(course: Course): void {
+		this.onDeleteCourse.emit(course);
+	};
+
+	editCourse(id: string | number): void {
+
+	};
 }

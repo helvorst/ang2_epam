@@ -1,16 +1,17 @@
 <div class="course">
 	<div class="main">
  		<div class="main-parameters">
-			<span>Course</span>
-			<b>Duration</b>
-			<i>Date</i>
+			<span><b>{{course.title}}</b></span>
+			<b>{{course.duration}}hrs</b>
+			<i>from:{{course.created}}</i>
 		</div>
 		<div class="main-description">
-			some text
+			{{course.description}}
 		</div>
 	</div>
 	<div class="controls">
-		<button>Edit</button>
-		<button>Delete</button>
+		<button (click)="editCourse(course.id)">Edit</button>
+		<button (click)="deleteCourse(course)">{{course.deleted ? 'Restore' : 'Delete'}}</button>
+
 	</div>
 </div>

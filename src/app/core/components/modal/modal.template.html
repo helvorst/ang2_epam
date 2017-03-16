@@ -1,0 +1,13 @@
+<div class="mymodal" *ngIf="modal.isShown">
+    {{modal.action}}
+    <div class="header">
+        <h4>{{content.title}}</h4>
+    </div>
+    <div class="body">
+        {{content.description}}
+    </div>
+    <div class="controls">
+        <button (click)="action(true)">Ok</button>
+        <button (click)="action(false)">Cancel</button>
+    </div>
+</div>

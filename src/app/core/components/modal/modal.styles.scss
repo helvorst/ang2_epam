@@ -1,0 +1,29 @@
+@import '../../../styles/mixins/mixins.scss';
+@import '../../../styles/variables/basic.scss';
+
+.mymodal {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  left: 10%;
+  //min-height: 50vh;
+  padding: $padding;
+  position: fixed;
+  right: 10%;
+  top: 10%;
+  z-index: 10;
+  @extend .border;
+  @extend .shadow;
+
+  .header {
+    justify-content: center;
+    margin: $padding 0;
+  }
+  .body {
+    flex: 1;
+  }
+  .controls {
+    display: flex;
+    justify-content: space-around;
+  }
+}

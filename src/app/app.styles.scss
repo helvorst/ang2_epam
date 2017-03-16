@@ -8,8 +8,11 @@ html, body{
 	text-transform: lowercase;
 }
 
-a.active {
-  background-color: gray;
+a {
+	cursor: pointer;
+	.active {
+		background-color: gray;
+	}
 }
 
 button {
@@ -19,4 +22,13 @@ button {
 input {
 	height: $elm-height;
 	@extend .border;
+}
+
+.pageflow {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.container {
+	flex: 1;
 }
