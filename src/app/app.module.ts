@@ -48,7 +48,7 @@ const APP_PROVIDERS = [
 	bootstrap: [AppComponent],
 	declarations: [
 		AppComponent,
-	    NoContentComponent,
+		NoContentComponent,
 		ModalComponent,
 		LoginComponent
 	],

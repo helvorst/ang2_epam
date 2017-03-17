@@ -16,12 +16,15 @@ import { ToolboxComponent } from './toolbox/toolbox.component';
 // services
 import { CourseService } from '../../core/services/courseService/course.service';
 
+// pipes
+import { CourseFilter } from '../../core/pipe/courseFilter/courseFilter';
 
 @NgModule({
 	declarations: [
 		CoursesComponent,
 		CourseComponent,
-		ToolboxComponent
+		ToolboxComponent,
+		CourseFilter
 	],
 	imports: [
 		//routes,
@@ -30,7 +33,8 @@ import { CourseService } from '../../core/services/courseService/course.service'
 		CommonModule,
 	],
 	providers: [
-		CourseService
+		CourseService,
+
 	]
 })
 export class CoursesModule {

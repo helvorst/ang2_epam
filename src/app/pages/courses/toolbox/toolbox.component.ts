@@ -8,7 +8,7 @@ import  { Component } from '@angular/core';
 })
 
 export class ToolboxComponent {
-	search: '';
+	search: '1';
 
 	findCourse(): void {
 		console.log(this.search);

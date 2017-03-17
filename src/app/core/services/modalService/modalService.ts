@@ -1,7 +1,7 @@
 /**
  * Created by Elena_Barantseva on 3/16/2017.
  */
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable, Subject} from "rxjs";
 
 @Injectable()

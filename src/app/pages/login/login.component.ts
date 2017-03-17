@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 @Component({
     selector: 'login',
     templateUrl: 'login.template.html',
-    styles: [require('./login.styles.scss')]
+    styles: ['login.styles.scss']
 })
 
 export class LoginComponent {
@@ -21,7 +21,7 @@ export class LoginComponent {
     login(): void {
         const loginResult = this.authService.login(this.credentials);
         if(loginResult){
-            this.router.navigate(['courses']);
+            this.router.navigate(['/']);
         }
     };
 }
