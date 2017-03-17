@@ -7,6 +7,8 @@ import {
 	ViewEncapsulation
 } from '@angular/core';
 import { AppState } from './app.service';
+import {AuthService} from "./core/services/authService/auth.service";
+import {Router} from "@angular/router";
 
 /*
  * App Component
@@ -24,10 +26,14 @@ import { AppState } from './app.service';
 })
 export class AppComponent implements OnInit {
 
-	constructor() {
-	}
+	constructor(private authService: AuthService,
+	private router: Router) {
+	};
 
 	public ngOnInit() {
-	}
+		if(!this.authService.isAuthenticated()){
+			this.router.navigate(['/login']);
+		}
+	};
 
 }

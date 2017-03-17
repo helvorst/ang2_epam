@@ -30,7 +30,10 @@ export class CoursesComponent implements OnInit {
     };
 
     outDeleteCourse(course: Course): void {
-        const sub = this.modal.dialog().subscribe(x => {
+        const content = {
+            title: 'Do you really wanna delete the course?'
+        };
+        const sub = this.modal.dialog(content).subscribe(x => {
             if (x) {
                 this.courseSrv.deleteCourse(course.id);
             }

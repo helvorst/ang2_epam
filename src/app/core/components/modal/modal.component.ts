@@ -16,11 +16,6 @@ export class ModalComponent {
 
     }
 
-    content = {
-        title: 'Do you really wanna booty',
-        description: 'If you do it...'
-    };
-
     action(chosen: boolean): void {
         this.modal.result.next(chosen);
         this.modal.isShown = false;

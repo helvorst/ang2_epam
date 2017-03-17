@@ -9,9 +9,14 @@ import {Observable, Subject} from "rxjs";
 export class ModalService {
 
     isShown: boolean = false;
-    result = new Subject();
+    result: Subject<boolean> = new Subject();
+    content: Object = {
+        title: 'Do you really wanna booty',
+        description: 'If you do it...'
+    };
 
-    dialog(): Observable<boolean> {
+    dialog(customContent: Object): Observable<boolean> {
+        this.content = customContent;
         this.isShown = true;
         return this.result.asObservable();
     }

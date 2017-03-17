@@ -9,7 +9,9 @@ html, body{
 }
 
 a {
-	cursor: pointer;
+	cursor: pointer !important;
+	color: blue !important;
+	text-decoration: underline;
 	.active {
 		background-color: gray;
 	}

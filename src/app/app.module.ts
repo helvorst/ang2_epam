@@ -22,7 +22,7 @@ import { ROUTES } from './app.routes';
 
 // App is our top level component
 import { AppComponent } from './app.component';
-import { NoContentComponent } from './pages/no-content';
+
 
 
 // Components
@@ -30,9 +30,11 @@ import { HeaderModule, FooterModule, ModalComponent } from './core/components';
 
 // Pages
 import { CoursesModule } from './pages/courses';
+import { NoContentComponent } from './pages/no-content';
+import { LoginComponent } from './pages/login';
 
 // Services
-import { TodoService, ModalService } from './core/services';
+import { TodoService, ModalService, AuthService } from './core/services';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -47,7 +49,8 @@ const APP_PROVIDERS = [
 	declarations: [
 		AppComponent,
 	    NoContentComponent,
-		ModalComponent
+		ModalComponent,
+		LoginComponent
 	],
 	imports: [ // import Angular's modules
 		BrowserModule,
@@ -56,13 +59,14 @@ const APP_PROVIDERS = [
 		RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
 		HeaderModule,
 		FooterModule,
-		CoursesModule
+		CoursesModule,
 
 	],
 	providers: [ // expose our Services and Providers into Angular's dependency injection
 		ENV_PROVIDERS,
 		APP_PROVIDERS,
-		ModalService
+		ModalService,
+		AuthService
 	]
 })
 export class AppModule {

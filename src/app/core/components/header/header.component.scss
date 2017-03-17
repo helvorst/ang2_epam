@@ -6,44 +6,27 @@
 	@extend .box;
 }
 
-.logo {
-	float: left;
-	padding-top: 10px;
-}
+.logo1 {
+	align-items: center;
+	display: flex;
+	height: 100%;
+	padding: 0 $padding;
+	width: 100%;
 
-.logo-title {
-	line-height: 1;
-	font-size: 1.6rem;
-}
-
-.logo-sub-title {
-	font-size: 0.7rem;
-}
-
-.menu {
-	float: right;
-	font-size: 0.8rem;
-	padding-top: 20px;
-
-	.menu-item {
-		text-transform: uppercase;
-		border-left: solid 1px $white;
-		border-right: solid 1px $white;
-		padding: 0 15px;
-		display: inline-block;
-		position: relative;
-		cursor: pointer;
-
-		&:first-child {
-			border: none;
-		}
-
-		&:last-child {
-			border: none;
-		}
-
-		&.active {
-			background-color: darken($c-primary, 10%);
-		}
+	img {
+		height: 50px;
+		margin: 0 25px;
+		width: 50px;
+	}
+	.title {
+		flex-basis: 30%;
+	}
+	.middle {
+		flex: 1;
+	}
+	.logoff {
+		display: flex;
+		flex-direction: column;
+		text-align: end;
 	}
 }

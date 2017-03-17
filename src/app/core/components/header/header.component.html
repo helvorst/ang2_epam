@@ -1,12 +1,15 @@
 <nav class="main-navbar">
-	<div class="container">
-		<div class="logo">
-			<div class="logo-title">courses</div>
+	<div class="logo1">
+		<img src="https://img.clipartfest.com/3c931e50e70ccd39db215ddce0e11e65_bradleys-book-outlet-book-pictures-cartoon_583-385.png"/>
+		<div class="title">
+			<h2>courses</h2>
 		</div>
-		<div class="menu">
-			<div class="menu-item" [routerLink]="'home'" routerLinkActive="active">Home</div>
-			<div class="menu-item" [routerLink]="'pageone'" routerLinkActive="active">Page 1</div>
-			<div class="menu-item" [routerLink]="'pagetwo'" routerLinkActive="active">Page 2</div>
+		<div class="middle" *ngIf="authService.isAuthenticated()">
+			breadcrumb
+		</div>
+		<div class="logoff" *ngIf="authService.isAuthenticated()">
+			<span>user name</span>
+			<a (click)="logout()">log off</a>
 		</div>
 	</div>
 </nav>
