@@ -31,9 +31,9 @@ export class AppComponent implements OnInit {
 	};
 
 	public ngOnInit() {
-		if(!this.authService.isAuthenticated()){
-			this.router.navigate(['/login']);
-		}
+		// if(!this.authService.isAuthenticated()){
+		// 	this.router.navigate(['/login']);
+		// }
 	};
 
 }

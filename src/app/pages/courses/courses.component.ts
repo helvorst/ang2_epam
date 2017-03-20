@@ -6,6 +6,7 @@ import {Component, OnInit} from '@angular/core';
 import {Course} from '../../core/class/course.class';
 import {CourseService} from "../../core/services/courseService/course.service";
 import {ModalService} from "../../core/services/modalService/modalService";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -21,12 +22,13 @@ export class CoursesComponent implements OnInit {
 
     }
 
-
-    courses: Course[] = [];
+    //courses: Observable<Course[]>;
+    courses: Course[];
     sub;
 
     ngOnInit(): void {
-        this.courses = this.courseSrv.getList();
+        this.courseSrv.getList()
+            .subscribe((courses: Course[]) => this.courses = courses);
     };
 
     outDeleteCourse(course: Course): void {
@@ -35,7 +37,7 @@ export class CoursesComponent implements OnInit {
         };
         const sub = this.modal.dialog(content).subscribe(x => {
             if (x) {
-                this.courseSrv.deleteCourse(course.id);
+                this.courseSrv.deleteCourse(course.id, this.courses);
             }
             sub.unsubscribe();
         });

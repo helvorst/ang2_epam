@@ -36,6 +36,9 @@ import { LoginComponent } from './pages/login';
 // Services
 import { TodoService, ModalService, AuthService } from './core/services';
 
+// Guards
+import { AuthGuard } from './core/guard';
+
 // Application wide providers
 const APP_PROVIDERS = [
 	TodoService
@@ -66,7 +69,8 @@ const APP_PROVIDERS = [
 		ENV_PROVIDERS,
 		APP_PROVIDERS,
 		ModalService,
-		AuthService
+		AuthService,
+		AuthGuard
 	]
 })
 export class AppModule {
