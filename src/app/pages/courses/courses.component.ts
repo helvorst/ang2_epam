@@ -27,17 +27,19 @@ export class CoursesComponent implements OnInit {
     sub;
 
     ngOnInit(): void {
-        this.courseSrv.getList()
-            .subscribe((courses: Course[]) => this.courses = courses);
+        this.courses = this.courseSrv.getList();
+        // this.courseSrv.getList()
+        //     .subscribe((courses: Course[]) => this.courses = courses);
     };
 
-    outDeleteCourse(course: Course): void {
+    outDeleteCourse(params): void {
         const content = {
             title: 'Do you really wanna delete the course?'
         };
         const sub = this.modal.dialog(content).subscribe(x => {
             if (x) {
-                this.courseSrv.deleteCourse(course.id, this.courses);
+                const index = params[1];
+                this.courseSrv.deleteCourse(index);
             }
             sub.unsubscribe();
         });

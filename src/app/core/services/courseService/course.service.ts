@@ -12,21 +12,33 @@ import {Observable} from "rxjs";
 @Injectable()
 export class CourseService {
     private url: string = 'http://localhost:3001/courses';
-    courses: Course[];
+    courses: Course[] = [];
 
     constructor(private http: Http) {
 
     };
 
-    public getList(): Observable<Course[]> {
+    // public getList(): Observable<Course[]> {
+    //     //return courses;
+    //
+    //     return this.http.get(this.url)
+    //         .map((response: Response) =>
+    //             response.json() as Course[]);
+    // }
+    public getList(): Course[] {
         //return courses;
-        return this.http.get(this.url)
+
+        this.http.get(this.url)
             .map((response: Response) =>
-                response.json() as Course[]);
+                response.json() as Course[])
+            .subscribe(data => this.courses.push(...data));
+        return this.courses;
     }
 
-    public createCourse(): Course {
-        return new Course();
+    public addCourse(): Course {
+        const newCourse = new Course('newid', 'newtitle', '', 9, 'desc');
+        this.courses.push(newCourse);
+        return newCourse;
     }
 
     public getCourseById(id: string | number): Course {
@@ -37,14 +49,13 @@ export class CourseService {
 
     }
 
-    public deleteCourse(id: string | number, courses: Course[]): void {
-        const index = courses.findIndex(course => {
-            return course.id === id;
-        });
-        if (isNumber(index)) {
-            courses.splice(index, 1);
-        }
-        //courses =
-            //ourses.filter((course: Course) => course.id !== id)
+    public deleteCourse(index: number): void {
+        // const index = this.courses.findIndex(course => {
+        //     return course.id === id;
+        // });
+        // if (isNumber(index)) {
+            this.courses.splice(index, 1);
+        //}
+
     }
 }

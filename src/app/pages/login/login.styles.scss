@@ -1,6 +1,8 @@
 @import '../../styles/mixins/mixins';
 @import '../../styles/variables/basic';
+
 .login {
+  margin-top: $padding*2;
   padding: $padding;
   @extend .box;
 }

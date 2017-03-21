@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 @Component({
     selector: 'login',
     templateUrl: 'login.template.html',
-    styles: ['login.styles.scss']
+    styles: [require('./login.styles.scss')]
 })
 
 export class LoginComponent {
@@ -14,8 +14,8 @@ export class LoginComponent {
     };
 
     credentials = {
-        login: undefined,
-        password: undefined
+        login: '1',
+        password: '1'
     };
 
     login(): void {

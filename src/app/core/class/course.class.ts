@@ -1,8 +1,9 @@
 export class Course {
-    id: string | number;
-    title: string;
-    created: string;
-    duration: number;
-    description: string;
-    deleted: boolean;
+    constructor(
+    public id: string | number,
+    public title: string,
+    public created: string,
+    public duration: number,
+    public description: string,
+    public deleted?: boolean){}
 }
